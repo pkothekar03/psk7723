@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="search-box">
+                <input type="text" id="city-input" placeholder="Enter city name..." autocomplete="off">
+                <button id="search-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+            <div id="error-message" class="error hidden">City not found. Please try again.</div>
+        </header>
+
+        <main id="weather-display" class="hidden">
+            <div class="weather-info">
+                <h1 id="city-name">London</h1>
+                <p id="date">Mon, 24 Apr</p>
+                
+                <div class="temperature-container">
+                    <div id="weather-icon" class="weather-icon">☀️</div>
+                    <div class="temperature">
+                        <span id="temp-value">22</span><span class="unit">°C</span>
+                    </div>
+                </div>
+                
+                <div id="weather-description" class="description">Clear Sky</div>
+                
+                <div class="details">
+                    <div class="detail-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        <div class="detail-info">
+                            <span class="detail-label">Wind</span>
+                            <span id="wind-speed" class="detail-value">5 km/h</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        <div class="detail-info">
+                            <span class="detail-label">Humidity</span>
+                            <span id="humidity" class="detail-value">45%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+        </div>
+        
+        <div id="initial-state" class="initial-state">
+            <div class="icon-cloud">☁️</div>
+            <p>Search for a city to see the weather.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
